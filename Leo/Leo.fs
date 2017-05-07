@@ -1,4 +1,7 @@
-namespace Leo
+module Leo050
 
-type Leo() = 
-    member this.X = "F#"
+let a1 below n =
+    [1..n]
+    |> List.filter (fun n -> n % 3 = 0)
+    |> List.filter (fun n -> n % 5 = 0)
+    |> List.sum
