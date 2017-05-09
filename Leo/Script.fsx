@@ -1,4 +1,4 @@
-#load "Leo.fs"
-open Leo
+#load "A050.fs"
+open A050
 
 // Define your library scripting code here

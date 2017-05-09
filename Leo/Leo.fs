@@ -1,6 +1,6 @@
-module Leo050
+module Leo
 
-let a1 below n =
+let a001 below n =
     [1..n]
     |> List.filter (fun n -> n % 3 = 0)
     |> List.filter (fun n -> n % 5 = 0)
