@@ -6,5 +6,6 @@ open FsUnit
 open Leo
 
 [<Test>]
-let ``Example Test`` () =
-    a001 10 |> should equal 23
+let ``->`` () =
+    //a001 10 |> should equal 23
+    a002 89 |> should equal 44
