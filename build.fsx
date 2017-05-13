@@ -2,6 +2,7 @@
 #r "./packages/FAKE/tools/FakeLib.dll"
 
 open Fake
+open Fake.Testing
 
 // Directories
 let buildDir  = "./build/"
@@ -27,6 +28,11 @@ Target "Build" (fun _ ->
     |> Log "AppBuild-Output: "
 )
 
+Target "Test" (fun _ ->
+    !! ("build/TestLeo.dll")
+    |> NUnit3 id
+)
+
 Target "Deploy" (fun _ ->
     !! (buildDir + "/**/*.*")
     -- "*.zip"
@@ -36,7 +42,8 @@ Target "Deploy" (fun _ ->
 // Build order
 "Clean"
   ==> "Build"
+  ==> "Test"
   ==> "Deploy"
 
 // start build
-RunTargetOrDefault "Build"
+RunTargetOrDefault "Test"
